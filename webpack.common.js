@@ -5,8 +5,12 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        app: './src/index.js',
-        // print: './src/print.js'
+        app:'./src/index.js'
+    },
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname,'dist'),
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -16,17 +20,6 @@ module.exports = {
             }
         ]
     },
-    devtool: 'inline-source-map',
-    devServer: {
-            contentBase: './dist',
-            hot: true
-       },
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname,'dist'),
-        publicPath: '/',
-    },
-    mode: "production",
     plugins:[
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackHtml({

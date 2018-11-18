@@ -13,6 +13,7 @@ function component(){
     //  btn,onclick = printMe;
 
     //  element.appendChild(btn);
+    
      var element = document.createElement('pre');
      element.innerHTML = [
          'hello webpack',
